@@ -8,9 +8,9 @@ function App() {
   const [coords, setCoords] = useState();
   const [weather, setWeather] = useState();
   const [temp, setTemp] = useState();
-  const [isLoading, setIsLoading] = useState(true)
-  const [location, setLocation] = useState("")
-  const [hasError, setHasError] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+  const [location, setLocation] = useState("");
+  const [hasError, setHasError] = useState();
 
     const searchLocation = (e) => {
       if (e.key === 'Enter'){
@@ -29,12 +29,14 @@ function App() {
   }
 
   useEffect(() => {
-    if(coords){
+    if(coords || location){
       const apiKey = 'cf151a21b327871f33543eed1193e0c0'
-      const urlByCity = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`
-      const urlByCoords = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}`
-
-      const url = location !== "" ? urlByCity : urlByCoords;
+      let url = ''
+      if(location){
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`
+      }else{
+        url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}`
+      }
       setIsLoading(true);
       axios.get(url)
         .then(res => {
@@ -44,6 +46,7 @@ function App() {
             farenh: ((res.data.main.temp-273.15) * 9/5 + 32).toFixed(1)
           }
           setTemp(obj)
+          setHasError(false)
         })
         .catch(err=> {
           setHasError(true)
