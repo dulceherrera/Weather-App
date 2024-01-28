@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/*---Reset---*/
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  color: #116492;
+}
+
+
+button{
+  border: none;
+  font-family: inherit;
+}
+
+ul{
+  list-style: none;
+}
+
+.app{
+  background-image: url('https://static6.depositphotos.com/1021124/554/i/450/depositphotos_5542374-stock-photo-clouds.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app_header{
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.app_title{
+  text-align: center;
+  margin: 2rem 1.5rem;
+  font-size: 1.5rem;
+  color: #ffff;
+  line-height: 1.2;
+}
+
+.app_searchLoc{
+  position: relative;
+  margin: 1rem 0.5rem;
+  text-align: center;
+}
+
+.app_searchLoc .search_input{
+  background-color: #116492;
+  color: #ffff;
+
+}
+
+.search_input::placeholder{
+  color: #ffff;
+}
+
+.app_searchLoc input{
+  width: 250px;
+}
+
+input{
+  height: 35px;
+  font-size: 1.25rem;
+  padding: 0 3rem;
+  border: none;
+  border-radius: 10px;
+  transition: all .7s ease;
+}
+
+.search_btn{
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  margin-left: 7px;
+  width: 40px;
+  height: 40px;
+  transition: .5s;
+  cursor: pointer;
+  text-align: center;
+}
+
+i{
+  color: #fcfcfc
+}
+
+.search_btn i{
+  font-size: 1.25rem;
+  transition: all .7s ease;
+}
+
+.title_error_city,
+.title_try{
+  color: #ffff;
+  line-height: 2;
+  text-shadow: 5px 5px #116492;
+}
+
+.title_error_city{
+  font-size: 2rem;
+
+}
+
+.title_try{
+  font-size: 1.5rem;
+}
+
+.container_err{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,87 @@
+.weather{
+  background: linear-gradient(180deg, #e5f2ff 0%, #d5f3ff 97.4%);
+  box-shadow: .625rem .125rem 1.75rem #3b3a3a33;
+  padding: 1rem;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 2rem;
+}
+
+.weather_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather_img{
+  width: 150px;
+}
+
+.weather_title{
+  font-size: 2.5rem
+}
+
+.weather_city{
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.weather_day{
+  margin-top: 0.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.weather_clouds{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+.weather_info li{
+  margin: 8px 0;
+}
+
+.weather_info li span:last-child{
+  font-weight: 700;
+}
+
+.weather_container1{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.weather_temp{
+  font-weight: 600;
+  width: auto;
+  margin: 0.5rem 0;
+  letter-spacing: -2px;
+  font-size: 2rem;
+  padding-right: 2rem;
+}
+
+.weather_btn{
+  background-color: #38a0d8;
+  color: #fffffff2;
+  font-size: 1rem;
+  box-shadow: 0.125rem 0.125rem 0.125rem 0.06rem #3b3a3a33;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .weather_temp{
+    font-size: 4rem;
+  }
+
+    .weather_city {
+      font-size: 2rem;
+  }
+}
